@@ -1,16 +1,13 @@
 import React from 'react'
-import quizApp from '../assets/quiz-app.png'
-import ipTracker from '../assets/screenshot (1).png'
-import adviceGenerator from '../assets/advice 2.png'
-import movie from '../assets/image.png'
-import unitConverter from '../assets/unit-converter.png'
+
+const ASSETS = 'https://raw.githubusercontent.com/Bindekere/Personal-Portfolio/main/src/assets'
 
 const projects = [
-  { title: 'Trivia Quiz App', description: 'A React quiz app that fetches live questions from the Open Trivia DB API. Pick your category and difficulty, answer multiple-choice questions, and get scored at the end. Built with full state management, randomised answer ordering, and a Play Again flow.', tech: ['React', 'JavaScript', 'Vite', 'CSS', 'Open Trivia API'], image: quizApp, liveLink: 'https://capstonequizproject.netlify.app/', githubLink: 'https://github.com/Bindekere/scrimba-solo-quiz-project' },
-  { title: 'IP Address Tracker', description: 'Fetches live IP geolocation data and renders it on an interactive Leaflet.js map. Tests API integration and external library skills.', tech: ['HTML', 'Bootstrap', 'JavaScript', 'Leaflet.js', 'ipify'], image: ipTracker, liveLink: 'https://bindekere-ip-address-tracker.netlify.app/', githubLink: 'https://github.com/Bindekere/IP-Address-Tracker' },
-  { title: 'Advice Generator', description: 'Integrates RapidAPI to serve random pieces of advice, with smooth CSS animations on card flip.', tech: ['HTML', 'CSS', 'JavaScript', 'RapidAPI'], image: adviceGenerator, liveLink: 'https://advice-generation.netlify.app/', githubLink: 'https://github.com/Bindekere/Advice-generator' },
-  { title: 'Movie Watchlist', description: 'Search for movies via the OMDb API, view details, and manage a personal watchlist using localStorage.', tech: ['HTML', 'CSS', 'JavaScript', 'OMDb API'], image: movie, liveLink: 'https://bindekere-movie-watchlist.netlify.app/', githubLink: 'https://github.com/Bindekere/movie-watchlist' },
-  { title: 'Unit Converter', description: 'Real-time metric/imperial unit converter covering length, volume and mass with instant updates and full input validation.', tech: ['HTML', 'CSS', 'JavaScript'], image: unitConverter, liveLink: 'https://mysimpleunitconverter.netlify.app/', githubLink: 'https://github.com/Bindekere/Unit-converter' },
+  { title: 'Trivia Quiz App', description: 'A React quiz app that fetches live questions from the Open Trivia DB API. Pick your category and difficulty, answer multiple-choice questions, and get scored at the end. Built with full state management, randomised answer ordering, and a Play Again flow.', tech: ['React', 'JavaScript', 'Vite', 'CSS', 'Open Trivia API'], image: `${ASSETS}/quiz-app.png`, liveLink: 'https://capstonequizproject.netlify.app/', githubLink: 'https://github.com/Bindekere/scrimba-solo-quiz-project' },
+  { title: 'IP Address Tracker', description: 'Fetches live IP geolocation data and renders it on an interactive Leaflet.js map. Tests API integration and external library skills.', tech: ['HTML', 'Bootstrap', 'JavaScript', 'Leaflet.js', 'ipify'], image: `${ASSETS}/screenshot%20(1).png`, liveLink: 'https://bindekere-ip-address-tracker.netlify.app/', githubLink: 'https://github.com/Bindekere/IP-Address-Tracker' },
+  { title: 'Advice Generator', description: 'Integrates RapidAPI to serve random pieces of advice, with smooth CSS animations on card flip.', tech: ['HTML', 'CSS', 'JavaScript', 'RapidAPI'], image: `${ASSETS}/advice%202.png`, liveLink: 'https://advice-generation.netlify.app/', githubLink: 'https://github.com/Bindekere/Advice-generator' },
+  { title: 'Movie Watchlist', description: 'Search for movies via the OMDb API, view details, and manage a personal watchlist using localStorage.', tech: ['HTML', 'CSS', 'JavaScript', 'OMDb API'], image: `${ASSETS}/image.png`, liveLink: 'https://bindekere-movie-watchlist.netlify.app/', githubLink: 'https://github.com/Bindekere/movie-watchlist' },
+  { title: 'Unit Converter', description: 'Real-time metric/imperial unit converter covering length, volume and mass with instant updates and full input validation.', tech: ['HTML', 'CSS', 'JavaScript'], image: `${ASSETS}/unit-converter.png`, liveLink: 'https://mysimpleunitconverter.netlify.app/', githubLink: 'https://github.com/Bindekere/Unit-converter' },
 ]
 
 const Projects = () => (
@@ -21,7 +18,7 @@ const Projects = () => (
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((project, i) => (
           <div key={i} className="card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-            <div style={{ overflow: 'hidden', height: '200px' }}>
+            <div style={{ overflow: 'hidden', height: '200px', background: 'var(--bg-card)' }}>
               <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease', display: 'block' }} onMouseEnter={e => e.currentTarget.style.transform='scale(1.05)'} onMouseLeave={e => e.currentTarget.style.transform='scale(1)'} />
             </div>
             <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
