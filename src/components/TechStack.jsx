@@ -1,6 +1,6 @@
 import { useTheme } from '../ThemeContext'
 import htmlLogo from '../assets/html-logo.png'
-import githubLogo from '../assets/Github_logo.png'
+import githubLogo from '../assets/GitHub_logo.png'
 import bootstrapLogo from '../assets/R (3).png'
 import figmaLogo from '../assets/Figma.jpeg'
 import reactLogo from '../assets/R (1).png'
@@ -37,7 +37,6 @@ const groups = [
 export default function TechStack() {
   const { theme } = useTheme()
   const isTerminal = theme === 'terminal'
-  const isEthereal = theme === 'ethereal'
 
   return (
     <section
@@ -48,7 +47,7 @@ export default function TechStack() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         <p className="section-label" style={{ marginBottom: '0.75rem' }}>
-          {isTerminal ? 'stack.config' : isEthereal ? '// Technologies' : 'My Toolkit'}
+          {isTerminal ? 'stack.config' : 'My Toolkit'}
         </p>
 
         <h2
@@ -64,8 +63,6 @@ export default function TechStack() {
         >
           {isTerminal ? (
             <><span style={{ color: 'var(--accent)' }}>{'>'}</span> Tech <span style={{ color: 'var(--accent)' }}>Stack</span></>
-          ) : isEthereal ? (
-            <>Technical <span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Foundation</span></>
           ) : (
             <>Tech <span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Stack</span></>
           )}
